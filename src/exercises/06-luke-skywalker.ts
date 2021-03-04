@@ -1,5 +1,5 @@
 import { ajax } from 'rxjs/ajax';
-import { switchMap, map, pluck } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { zip, of } from 'rxjs';
 
 /**
@@ -47,13 +47,10 @@ import { zip, of } from 'rxjs';
     // ==================================================================
 
     // Realizar el llamado al URL para obtener a Luke Skywalker
-    getRequest(`${SW_API}/people/1`).pipe(
+    getRequest(`Aquí va un URL`).pipe(
         // Realizar los operadores respectivos aquí
-        // 1. respuesta
-        // switchMap( resp => getRequest(resp['vehicles'][0]))
+        
 
-        switchMap( resp => zip(of(resp), getRequest(resp['vehicles'][0]))),
-        map(([x, y]) => ({personaje:x , vehiculo:y }))
 
         
 
